@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+
+<html class="light" lang="tr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>İNİF Kariyer - Kariyer Portalı</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "on-secondary-container": "#217128",
+                        "on-secondary": "#ffffff",
+                        "surface-tint": "#2d6197",
+                        "surface-container-lowest": "#ffffff",
+                        "error": "#ba1a1a",
+                        "inverse-on-surface": "#f0f1f2",
+                        "on-surface": "#191c1d",
+                        "on-primary": "#ffffff",
+                        "outline": "#727780",
+                        "surface-container": "#edeeef",
+                        "on-surface-variant": "#42474f",
+                        "primary-fixed-dim": "#a0c9ff",
+                        "tertiary-container": "#cca730",
+                        "secondary-fixed": "#a3f69c",
+                        "surface": "#f8f9fa",
+                        "on-secondary-fixed": "#002204",
+                        "on-primary-fixed-variant": "#07497d",
+                        "on-error": "#ffffff",
+                        "primary-fixed": "#d2e4ff",
+                        "on-error-container": "#93000a",
+                        "tertiary-fixed-dim": "#e9c349",
+                        "on-tertiary": "#ffffff",
+                        "on-tertiary-fixed-variant": "#574500",
+                        "tertiary": "#735c00",
+                        "on-background": "#191c1d",
+                        "secondary-container": "#a0f399",
+                        "secondary-fixed-dim": "#88d982",
+                        "on-secondary-fixed-variant": "#005312",
+                        "tertiary-fixed": "#ffe088",
+                        "surface-bright": "#f8f9fa",
+                        "surface-variant": "#e1e3e4",
+                        "on-primary-container": "#8ebdf9",
+                        "inverse-primary": "#a0c9ff",
+                        "on-primary-fixed": "#001c37",
+                        "outline-variant": "#c2c7d1",
+                        "primary-container": "#0f4c81",
+                        "secondary": "#1b6d24",
+                        "surface-container-highest": "#e1e3e4",
+                        "primary": "#00355f",
+                        "surface-container-low": "#f3f4f5",
+                        "inverse-surface": "#2e3132",
+                        "error-container": "#ffdad6",
+                        "on-tertiary-container": "#4e3d00",
+                        "on-tertiary-fixed": "#241a00",
+                        "surface-container-high": "#e7e8e9",
+                        "background": "#f8f9fa",
+                        "surface-dim": "#d9dadb"
+                    },
+                    fontFamily: {
+                        "headline": ["Manrope"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    },
+                    borderRadius: { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" },
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .cta-gradient {
+            background: linear-gradient(135deg, #00355f 0%, #0f4c81 100%);
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body selection:bg-primary-container selection:text-white">
+<!-- TopNavBar (Shared Component) -->
+<header class="bg-[#f8f9fa] dark:bg-slate-900 font-['Manrope'] tracking-tight leading-tight sticky top-0 z-50 transition-all duration-200">
+<div class="flex justify-between items-center w-full px-8 py-4 max-w-full mx-auto">
+<div class="text-xl font-bold text-[#0F4C81] dark:text-white flex items-center gap-2">
+<span class="material-symbols-outlined text-3xl" style="font-variation-settings: 'FILL' 1;">school</span>
+<span>İNİF Kariyer</span>
+</div>
+<nav class="hidden lg:flex items-center space-x-8">
+<a class="text-slate-600 hover:text-[#0F4C81] transition-colors duration-200" href="#">Hakkımızda</a>
+<a class="text-slate-600 hover:text-[#0F4C81] transition-colors duration-200" href="#">Bölümler</a>
+<a class="text-[#0F4C81] font-semibold border-b-2 border-[#0F4C81]" href="#">Kariyer</a>
+<a class="text-slate-600 hover:text-[#0F4C81] transition-colors duration-200" href="#">Mezunlar</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="text-[#0F4C81] font-semibold px-4 py-2 hover:bg-surface-container-low rounded-lg transition-all">Giriş Yap</button>
+<button class="cta-gradient text-white px-6 py-2 rounded-lg font-semibold shadow-sm active:scale-95 duration-150">Kayıt Ol</button>
+</div>
+</div>
+</header>
+<main class="max-w-7xl mx-auto px-8 py-12">
+<!-- Page Header & Version Badge -->
+<div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
+<div class="space-y-2">
+<div class="flex items-center gap-3">
+<span class="bg-tertiary-fixed text-on-tertiary-fixed text-[10px] font-bold px-2 py-0.5 rounded tracking-widest uppercase">v2.0 COULD</span>
+<h1 class="text-4xl font-headline font-extrabold text-primary -tracking-wider">Kariyer Portalı</h1>
+</div>
+<p class="text-on-surface-variant max-w-xl text-lg leading-relaxed">
+                    İletişim Fakültesi öğrencileri ve mezunları için küratörlüğünü yaptığımız güncel iş, staj ve burs imkanlarını keşfedin.
+                </p>
+</div>
+<div class="flex gap-2">
+<div class="bg-surface-container-low p-1 rounded-lg flex">
+<button class="px-4 py-2 bg-white shadow-sm rounded-md text-primary font-semibold text-sm">Liste</button>
+<button class="px-4 py-2 text-on-surface-variant font-medium text-sm hover:text-primary transition-colors">Izgara</button>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+<!-- Sidebar Filters -->
+<aside class="lg:col-span-3 space-y-8">
+<div class="bg-surface-container-low rounded-xl p-6 border-none">
+<div class="flex items-center gap-2 mb-6 text-primary">
+<span class="material-symbols-outlined">tune</span>
+<h2 class="font-headline font-bold text-lg">Filtrele</h2>
+</div>
+<!-- Filter Groups -->
+<div class="space-y-6">
+<!-- Location -->
+<div class="space-y-3">
+<label class="text-label-sm font-semibold text-on-surface-variant uppercase tracking-widest">Konum</label>
+<select class="w-full bg-surface-container-lowest border-none rounded-lg text-sm focus:ring-2 focus:ring-primary/20 p-3">
+<option>Tüm Konumlar</option>
+<option>İstanbul</option>
+<option>Ankara</option>
+<option>Uzaktan (Remote)</option>
+</select>
+</div>
+<!-- Sector -->
+<div class="space-y-3">
+<label class="text-label-sm font-semibold text-on-surface-variant uppercase tracking-widest">Sektör</label>
+<div class="space-y-2">
+<label class="flex items-center gap-3 group cursor-pointer">
+<input checked="" class="w-4 h-4 rounded border-outline-variant text-primary focus:ring-primary/20" type="checkbox"/>
+<span class="text-sm text-on-surface group-hover:text-primary transition-colors">Dijital Pazarlama</span>
+</label>
+<label class="flex items-center gap-3 group cursor-pointer">
+<input class="w-4 h-4 rounded border-outline-variant text-primary focus:ring-primary/20" type="checkbox"/>
+<span class="text-sm text-on-surface group-hover:text-primary transition-colors">Halkla İlişkiler</span>
+</label>
+<label class="flex items-center gap-3 group cursor-pointer">
+<input class="w-4 h-4 rounded border-outline-variant text-primary focus:ring-primary/20" type="checkbox"/>
+<span class="text-sm text-on-surface group-hover:text-primary transition-colors">Görsel İletişim</span>
+</label>
+<label class="flex items-center gap-3 group cursor-pointer">
+<input class="w-4 h-4 rounded border-outline-variant text-primary focus:ring-primary/20" type="checkbox"/>
+<span class="text-sm text-on-surface group-hover:text-primary transition-colors">Radyo &amp; TV</span>
+</label>
+</div>
+</div>
+<!-- Type -->
+<div class="space-y-3">
+<label class="text-label-sm font-semibold text-on-surface-variant uppercase tracking-widest">İlan Tipi</label>
+<div class="flex flex-wrap gap-2">
+<span class="px-3 py-1 bg-primary text-white text-xs font-semibold rounded-full cursor-pointer">Tam Zamanlı</span>
+<span class="px-3 py-1 bg-surface-container-high text-on-surface-variant text-xs font-semibold rounded-full hover:bg-secondary-container transition-colors cursor-pointer">Staj</span>
+<span class="px-3 py-1 bg-surface-container-high text-on-surface-variant text-xs font-semibold rounded-full hover:bg-tertiary-fixed transition-colors cursor-pointer">Burs</span>
+</div>
+</div>
+<!-- Degree -->
+<div class="space-y-3">
+<label class="text-label-sm font-semibold text-on-surface-variant uppercase tracking-widest">Eğitim Seviyesi</label>
+<select class="w-full bg-surface-container-lowest border-none rounded-lg text-sm focus:ring-2 focus:ring-primary/20 p-3">
+<option>Lisans Öğrencisi</option>
+<option>Yeni Mezun</option>
+<option>Yüksek Lisans</option>
+</select>
+</div>
+</div>
+<button class="w-full mt-8 py-3 bg-surface-container-highest text-primary font-bold text-sm rounded-lg hover:bg-outline-variant/20 transition-all">Filtreleri Temizle</button>
+</div>
+<!-- Featured Tip -->
+<div class="bg-secondary-container/30 p-6 rounded-xl relative overflow-hidden">
+<div class="relative z-10">
+<h4 class="font-headline font-bold text-on-secondary-container mb-2">Profesyonel Profil</h4>
+<p class="text-xs text-on-secondary-container/80 leading-relaxed">Profilinizi %100 tamamlayarak ilanlarda öne çıkın ve kurumsal firmaların dikkatini çekin.</p>
+</div>
+<span class="material-symbols-outlined absolute -bottom-4 -right-4 text-8xl opacity-10 text-on-secondary-container">stars</span>
+</div>
+</aside>
+<!-- Listing Cards -->
+<div class="lg:col-span-9 space-y-6">
+<!-- Listing Item 1 -->
+<div class="group bg-surface-container-lowest rounded-xl p-6 transition-all duration-300 hover:bg-surface-container-high flex flex-col md:flex-row gap-6 relative">
+<div class="w-20 h-20 bg-surface rounded-lg flex items-center justify-center shrink-0 overflow-hidden">
+<img alt="Şirket Logosu" class="w-14 h-14 object-contain" data-alt="modern minimalist company logo with clean lines on a white background representing a professional tech firm" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB701Kh1EDu7D2WP2b7jfRpORwUVWpDqrmQXZGKJOJD4tYdSiQPO9Hm6z3UtQd2mBsNLT3TzPUhlhVq3Jn7ZcPpNBZSL5wOpktyVYYxtM82b7J1EULEpY1I6Fi504zv9IHFuzZgQNtYd35vO2bc13D_yNDycnqXQOy9-a6_4YpDI15q-bw9Nig4x7b8xSxouzJj7VjYnjq2-3rYmAV3UgSKdagYQ5Jq86Mehjk70CQIT5tKGYUzczgM65En3kUPsY2i-GTKEjS0f45N"/>
+</div>
+<div class="flex-grow space-y-3">
+<div class="flex justify-between items-start">
+<div>
+<h3 class="text-xl font-headline font-bold text-on-surface">Senior UX Designer</h3>
+<p class="text-primary font-semibold text-sm">MediaMarkt Türkiye</p>
+</div>
+<span class="bg-secondary-container text-on-secondary-container text-[10px] font-bold px-2 py-1 rounded">YENİ İLAN</span>
+</div>
+<p class="text-on-surface-variant text-sm leading-relaxed line-clamp-2">
+                            E-ticaret platformlarımızın kullanıcı deneyimini geliştirecek, veri odaklı tasarım süreçlerini yönetecek yetenekli bir UX tasarımcısı arıyoruz. Figma ve portfolyo zorunludur.
+                        </p>
+<div class="flex flex-wrap items-center gap-4 text-xs text-on-surface-variant font-medium">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">location_on</span>
+<span>İstanbul, Maslak</span>
+</div>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">schedule</span>
+<span>Tam Zamanlı</span>
+</div>
+<div class="flex items-center gap-1 text-tertiary">
+<span class="material-symbols-outlined text-sm">payments</span>
+<span>Rekabetçi Maaş</span>
+</div>
+</div>
+</div>
+<div class="flex md:flex-col justify-end gap-3 shrink-0">
+<button class="px-6 py-2.5 rounded-lg border border-outline-variant text-on-surface-variant font-bold text-sm hover:bg-surface transition-all">Detaylar</button>
+<button class="px-6 py-2.5 rounded-lg cta-gradient text-white font-bold text-sm shadow-md active:scale-95 transition-all">Başvur</button>
+</div>
+</div>
+<!-- Listing Item 2 - Internship -->
+<div class="group bg-surface-container-lowest rounded-xl p-6 transition-all duration-300 hover:bg-surface-container-high flex flex-col md:flex-row gap-6 relative">
+<div class="w-20 h-20 bg-surface rounded-lg flex items-center justify-center shrink-0 overflow-hidden">
+<img alt="Şirket Logosu" class="w-14 h-14 object-contain" data-alt="aesthetic circular abstract logo with vibrant gradients representing a creative agency or media house" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBvqR0QX5gqGKyHQ67sa95HF7XssKR4ykisU8MPK07OLmTJkXsFrKZDSrgJboURUh1bB2ZeHBbhe2pSaPiwCnCrYCMIigRmQUcOr1WJHIwDmFiotFWprhgPDjn5DQNclMeHVcRl1HUvN01vX8n4nUvLw0CurFavvE7wSQ3j_iiXOXeZIEQjc7apZe-PAgmZTf7P82-pvn5GYTqpMOlaHst6eJk2MB91JhxVsWJINudSJxvlbh-d2FgM7B6ijtwI08yCTNXkSct84LQ2"/>
+</div>
+<div class="flex-grow space-y-3">
+<div class="flex justify-between items-start">
+<div>
+<h3 class="text-xl font-headline font-bold text-on-surface">Kurumsal İletişim Stajyeri</h3>
+<p class="text-primary font-semibold text-sm">Publicis Groupe</p>
+</div>
+<span class="bg-blue-100 text-blue-800 text-[10px] font-bold px-2 py-1 rounded">STAJ</span>
+</div>
+<p class="text-on-surface-variant text-sm leading-relaxed line-clamp-2">
+                            Global müşterilerimizin iletişim stratejilerine destek verecek, metin yazımı ve raporlama süreçlerinde aktif rol alacak 3. veya 4. sınıf öğrencileri arıyoruz.
+                        </p>
+<div class="flex flex-wrap items-center gap-4 text-xs text-on-surface-variant font-medium">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">location_on</span>
+<span>Hibrit / İstanbul</span>
+</div>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">event</span>
+<span>3-6 Ay</span>
+</div>
+</div>
+</div>
+<div class="flex md:flex-col justify-end gap-3 shrink-0">
+<button class="px-6 py-2.5 rounded-lg border border-outline-variant text-on-surface-variant font-bold text-sm hover:bg-surface transition-all">Detaylar</button>
+<button class="px-6 py-2.5 rounded-lg cta-gradient text-white font-bold text-sm shadow-md active:scale-95 transition-all">Başvur</button>
+</div>
+</div>
+<!-- Listing Item 3 - Scholarship -->
+<div class="group bg-surface-container-lowest rounded-xl p-6 transition-all duration-300 hover:bg-surface-container-high flex flex-col md:flex-row gap-6 relative">
+<div class="w-20 h-20 bg-surface rounded-lg flex items-center justify-center shrink-0 overflow-hidden">
+<img alt="Vakıf Logosu" class="w-14 h-14 object-contain" data-alt="classic academic crest or emblem of a prestigious university or foundation in gold and navy colors" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD5i-mTE1jkfVkWuzzJYGTOzmBNN1edbos6jPPCF56UooFO8DLDZvfxjOxchqpE-JUx0-WS-6dy0xLqnpJmHYlU9ixkm6WtZw3LKsYjviKmBBp0vTKaMNQGNPr1DRXppiT0IA8L8QwdC4YX3R8rkb3fGlLLz7JTH7EtKRPVpO4_s1P7OPEL2iFArqT0JRT3zmYn63n3q-sf7g7OqJrwW3bMybWpQp47QjQ7Fdzua-EG_XDuJQK1BCWWDq8eTiMECikCENzWKbciw0OV"/>
+</div>
+<div class="flex-grow space-y-3">
+<div class="flex justify-between items-start">
+<div>
+<h3 class="text-xl font-headline font-bold text-on-surface">Akademik Başarı Bursu 2024</h3>
+<p class="text-primary font-semibold text-sm">İNİF Vakfı</p>
+</div>
+<span class="bg-tertiary-fixed text-on-tertiary-fixed text-[10px] font-bold px-2 py-1 rounded">BURS</span>
+</div>
+<p class="text-on-surface-variant text-sm leading-relaxed line-clamp-2">
+                            Fakültemizde yüksek başarı gösteren, sosyo-ekonomik desteğe ihtiyaç duyan öğrencilere yönelik yıllık eğitim bursu programı başvuruları başlamıştır.
+                        </p>
+<div class="flex flex-wrap items-center gap-4 text-xs text-on-surface-variant font-medium">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">verified</span>
+<span>Gereksinim: 3.50+ GANO</span>
+</div>
+<div class="flex items-center gap-1 text-error">
+<span class="material-symbols-outlined text-sm">alarm</span>
+<span>Son Gün: 15 Ekim</span>
+</div>
+</div>
+</div>
+<div class="flex md:flex-col justify-end gap-3 shrink-0">
+<button class="px-6 py-2.5 rounded-lg border border-outline-variant text-on-surface-variant font-bold text-sm hover:bg-surface transition-all">Kılavuz</button>
+<button class="px-6 py-2.5 rounded-lg cta-gradient text-white font-bold text-sm shadow-md active:scale-95 transition-all">Başvur</button>
+</div>
+</div>
+<!-- Listing Item 4 -->
+<div class="group bg-surface-container-lowest rounded-xl p-6 transition-all duration-300 hover:bg-surface-container-high flex flex-col md:flex-row gap-6 relative">
+<div class="w-20 h-20 bg-surface rounded-lg flex items-center justify-center shrink-0 overflow-hidden">
+<img alt="Şirket Logosu" class="w-14 h-14 object-contain" data-alt="professional corporate logo with sharp geometry in monochromatic grey tones" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBWzM3Am05jFeoI3EsX8sc9mZMNRmNy_PXz8DZUfx8ey8c4wcWmFL_aZ7buF75uvlQ_g-Z2kdfymI_pr9iUJvm5ypSxsQ5AMHA5kdFiy_xFVEW6gJSoS1OzWDj1IGrKjlnml4JV4av0ZWCFcSWeirXreRsOJGq1lkN0YNgR43Eu-0goXVbYyp3jghkQ3QZZnwZKnZLuEAIQAkn_DoX0CaSuMNCI3P0QtziQ2X3BFncNYK7kJMW17DoHz4MsuUarQ7wRuvG2jxRsQQUI"/>
+</div>
+<div class="flex-grow space-y-3">
+<div class="flex justify-between items-start">
+<div>
+<h3 class="text-xl font-headline font-bold text-on-surface">Social Media Manager</h3>
+<p class="text-primary font-semibold text-sm">Havas Istanbul</p>
+</div>
+</div>
+<p class="text-on-surface-variant text-sm leading-relaxed line-clamp-2">
+                            Kreatif kampanya fikirleri üretecek, topluluk yönetimi ve reklam paneli operasyonlarını yürütecek enerjik ekip arkadaşları arıyoruz.
+                        </p>
+<div class="flex flex-wrap items-center gap-4 text-xs text-on-surface-variant font-medium">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">location_on</span>
+<span>İstanbul, Levent</span>
+</div>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">schedule</span>
+<span>Tam Zamanlı</span>
+</div>
+</div>
+</div>
+<div class="flex md:flex-col justify-end gap-3 shrink-0">
+<button class="px-6 py-2.5 rounded-lg border border-outline-variant text-on-surface-variant font-bold text-sm hover:bg-surface transition-all">Detaylar</button>
+<button class="px-6 py-2.5 rounded-lg cta-gradient text-white font-bold text-sm shadow-md active:scale-95 transition-all">Başvur</button>
+</div>
+</div>
+<!-- Pagination -->
+<div class="flex justify-center pt-10">
+<nav class="flex items-center gap-2">
+<button class="w-10 h-10 flex items-center justify-center rounded-lg hover:bg-surface-container-high transition-colors text-on-surface-variant">
+<span class="material-symbols-outlined">chevron_left</span>
+</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-lg bg-primary text-white font-bold text-sm">1</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-lg hover:bg-surface-container-high transition-colors font-bold text-sm text-on-surface-variant">2</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-lg hover:bg-surface-container-high transition-colors font-bold text-sm text-on-surface-variant">3</button>
+<span class="px-2 text-outline-variant">...</span>
+<button class="w-10 h-10 flex items-center justify-center rounded-lg hover:bg-surface-container-high transition-colors font-bold text-sm text-on-surface-variant">12</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-lg hover:bg-surface-container-high transition-colors text-on-surface-variant">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</nav>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer (Shared Component) -->
+<footer class="bg-[#f8f9fa] dark:bg-slate-950 font-['Inter'] text-xs text-slate-500 w-full py-12 px-8 border-t border-[#c2c7d1]/15 mt-20">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-8 w-full max-w-7xl mx-auto">
+<div class="space-y-4">
+<div class="font-bold text-[#0F4C81] text-lg flex items-center gap-2">
+<span class="material-symbols-outlined">school</span>
+                    İNİF Kariyer
+                </div>
+<p class="leading-relaxed">Geleceğin iletişim profesyonellerini, bugünün sektör liderleriyle bir araya getiren köprü.</p>
+<p>© 2024 İNİF Kariyer - Tüm Hakları Saklıdır.</p>
+</div>
+<div class="space-y-4">
+<h4 class="font-bold text-[#0F4C81] text-sm uppercase tracking-widest">Hızlı Menü</h4>
+<ul class="space-y-2">
+<li><a class="hover:text-[#0F4C81] transition-colors" href="#">Açık İlanlar</a></li>
+<li><a class="hover:text-[#0F4C81] transition-colors" href="#">Staj Programları</a></li>
+<li><a class="hover:text-[#0F4C81] transition-colors" href="#">Mentörlük</a></li>
+<li><a class="hover:text-[#0F4C81] transition-colors" href="#">Başarı Hikayeleri</a></li>
+</ul>
+</div>
+<div class="space-y-4">
+<h4 class="font-bold text-[#0F4C81] text-sm uppercase tracking-widest">Kurumsal</h4>
+<ul class="space-y-2">
+<li><a class="hover:text-[#0F4C81] transition-colors" href="#">İletişim</a></li>
+<li><a class="hover:text-[#0F4C81] transition-colors" href="#">KVKK</a></li>
+<li><a class="hover:text-[#0F4C81] transition-colors" href="#">Kullanım Koşulları</a></li>
+<li><a class="hover:text-[#0F4C81] transition-colors" href="#">Fakülte Sitesi</a></li>
+</ul>
+</div>
+<div class="space-y-4">
+<h4 class="font-bold text-[#0F4C81] text-sm uppercase tracking-widest">Bülten</h4>
+<p>Yeni fırsatlardan haberdar olmak için kaydolun.</p>
+<div class="flex gap-2">
+<input class="bg-white border-outline-variant/30 rounded-lg text-xs w-full focus:ring-primary/20" placeholder="E-posta adresi" type="email"/>
+<button class="cta-gradient text-white px-4 py-2 rounded-lg font-bold">Kaydol</button>
+</div>
+</div>
+</div>
+</footer>
+</body></html>

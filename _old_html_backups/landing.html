@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+
+<html class="light" lang="tr">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "on-secondary-container": "#217128",
+                        "on-secondary": "#ffffff",
+                        "surface-tint": "#2d6197",
+                        "surface-container-lowest": "#ffffff",
+                        "error": "#ba1a1a",
+                        "inverse-on-surface": "#f0f1f2",
+                        "on-surface": "#191c1d",
+                        "on-primary": "#ffffff",
+                        "outline": "#727780",
+                        "surface-container": "#edeeef",
+                        "on-surface-variant": "#42474f",
+                        "primary-fixed-dim": "#a0c9ff",
+                        "tertiary-container": "#cca730",
+                        "secondary-fixed": "#a3f69c",
+                        "surface": "#f8f9fa",
+                        "on-secondary-fixed": "#002204",
+                        "on-primary-fixed-variant": "#07497d",
+                        "on-error": "#ffffff",
+                        "primary-fixed": "#d2e4ff",
+                        "on-error-container": "#93000a",
+                        "tertiary-fixed-dim": "#e9c349",
+                        "on-tertiary": "#ffffff",
+                        "on-tertiary-fixed-variant": "#574500",
+                        "tertiary": "#735c00",
+                        "on-background": "#191c1d",
+                        "secondary-container": "#a0f399",
+                        "secondary-fixed-dim": "#88d982",
+                        "on-secondary-fixed-variant": "#005312",
+                        "tertiary-fixed": "#ffe088",
+                        "surface-bright": "#f8f9fa",
+                        "surface-variant": "#e1e3e4",
+                        "on-primary-container": "#8ebdf9",
+                        "inverse-primary": "#a0c9ff",
+                        "on-primary-fixed": "#001c37",
+                        "outline-variant": "#c2c7d1",
+                        "primary-container": "#0f4c81",
+                        "secondary": "#1b6d24",
+                        "surface-container-highest": "#e1e3e4",
+                        "primary": "#00355f",
+                        "surface-container-low": "#f3f4f5",
+                        "inverse-surface": "#2e3132",
+                        "error-container": "#ffdad6",
+                        "on-tertiary-container": "#4e3d00",
+                        "on-tertiary-fixed": "#241a00",
+                        "surface-container-high": "#e7e8e9",
+                        "background": "#f8f9fa",
+                        "surface-dim": "#d9dadb"
+                    },
+                    fontFamily: {
+                        "headline": ["Manrope"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    },
+                    borderRadius: { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" },
+                },
+            },
+        }
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+
+        .academic-gradient {
+            background: linear-gradient(135deg, #00355f 0%, #0f4c81 100%);
+        }
+
+        .glass-overlay {
+            background: rgba(248, 249, 250, 0.8);
+            backdrop-filter: blur(20px);
+        }
+    </style>
+</head>
+
+<body class="bg-surface font-body text-on-surface">
+    <!-- TopNavBar -->
+    <nav class="bg-[#f8f9fa] dark:bg-slate-900 sticky top-0 z-50 transition-colors duration-200">
+        <div
+            class="flex justify-between items-center w-full px-8 py-4 max-w-full mx-auto font-['Manrope'] tracking-tight leading-tight">
+            <div class="text-xl font-bold text-[#0F4C81] dark:text-white">İNİF Kariyer</div>
+            <div class="hidden md:flex items-center space-x-8">
+                <a class="text-[#0F4C81] dark:text-blue-400 font-semibold border-b-2 border-[#0F4C81] hover:text-[#0F4C81] transition-colors duration-200"
+                    href="#">Hakkımızda</a>
+                <a class="text-slate-600 dark:text-slate-400 hover:text-[#0F4C81] transition-colors duration-200"
+                    href="#">Bölümler</a>
+                <a class="text-slate-600 dark:text-slate-400 hover:text-[#0F4C81] transition-colors duration-200"
+                    href="#">Kariyer</a>
+                <a class="text-slate-600 dark:text-slate-400 hover:text-[#0F4C81] transition-colors duration-200"
+                    href="#">Mezunlar</a>
+            </div>
+            <div class="flex items-center space-x-4">
+                <button
+                    class="px-5 py-2 text-sm font-semibold text-[#0F4C81] hover:bg-surface-container-low rounded transition-all duration-150 active:scale-95">Giriş
+                    Yap</button>
+                <button
+                    class="px-6 py-2 text-sm font-semibold academic-gradient text-white rounded-lg shadow-sm hover:opacity-90 transition-all duration-150 active:scale-95">Kayıt
+                    Ol</button>
+            </div>
+        </div>
+    </nav>
+    <main>
+        <!-- Hero Section -->
+        <section class="relative min-h-[870px] flex items-center bg-surface overflow-hidden">
+            <div class="absolute inset-0 z-0">
+                <img alt="University Architecture" class="w-full h-full object-cover opacity-10"
+                    data-alt="Wide angle shot of modern university campus architecture with clean lines and large windows during morning sunlight"
+                    src="../src/assets/20130805_430071.webp" />
+            </div>
+            <div class="container mx-auto px-8 grid grid-cols-1 lg:grid-cols-12 gap-12 relative z-10">
+                <div class="lg:col-span-7 flex flex-col justify-center">
+                    <span
+                        class="inline-block py-1 px-3 bg-secondary-container text-on-secondary-container text-xs font-bold rounded-full mb-6 w-fit uppercase tracking-widest">Geleceğinize
+                        Yön Verin</span>
+                    <h1
+                        class="font-headline text-primary text-[3.5rem] leading-[1.1] font-bold -tracking-[0.02em] mb-6">
+                        Akademik Başarıyı <br /><span class="text-tertiary">Kariyer Gücüyle</span> Birleştirin
+                    </h1>
+                    <p class="text-on-surface-variant text-lg leading-relaxed max-w-xl mb-10">
+                        İletişim Fakültesi mezunları ve öğrencileri için tasarlanmış özel kariyer ağı. Profesyonel
+                        dünyada ilk adımınızı akademik güvenceyle atın.
+                    </p>
+                    <div class="flex flex-wrap gap-4">
+                        <a class="flex items-center gap-3 academic-gradient text-white px-8 py-4 rounded-lg font-semibold hover:opacity-95 transition-all active:scale-95"
+                            href="#">
+                            <span class="material-symbols-outlined">work</span>
+                            Kariyer Portalı
+                        </a>
+                        <a class="flex items-center gap-3 bg-surface-container-lowest text-primary px-8 py-4 rounded-lg font-semibold hover:bg-surface-container-high transition-all active:scale-95"
+                            href="#">
+                            <span class="material-symbols-outlined">groups</span>
+                            Mezun Dizini
+                        </a>
+                    </div>
+                </div>
+                <div class="lg:col-span-5 relative hidden lg:block">
+                    <!-- Asymmetric Floating Stats -->
+                    <div
+                        class="bg-surface-container-lowest p-8 rounded-xl shadow-sm border border-outline-variant/15 absolute top-0 right-0 w-64 translate-x-4 -translate-y-8 z-20">
+                        <div class="text-primary text-3xl font-bold mb-1">2,500+</div>
+                        <div class="text-on-surface-variant text-sm font-medium">Aktif Mezun</div>
+                    </div>
+                    <div
+                        class="bg-surface-container-low p-8 rounded-xl shadow-sm border border-outline-variant/15 absolute bottom-12 left-0 w-72 -translate-x-12 z-20">
+                        <div class="text-tertiary text-3xl font-bold mb-1">150+</div>
+                        <div class="text-on-surface-variant text-sm font-medium">Partner Kurum</div>
+                    </div>
+                    <div class="aspect-[4/5] bg-surface-container-highest rounded-xl overflow-hidden shadow-2xl">
+                        <img alt="Student Working" class="w-full h-full object-cover"
+                            data-alt="Focused university student using laptop in modern library with soft natural lighting and scholarly environment"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDHgX6GoFp6C3ChGgiDy2n8pRHUJ-wZNDpNantZ7rXS2nhX93ZVD4tMnyCHEWNenE84unYfn_ge-Rq_WFwi1GnY2sDTQ_ynN3lVuDgqwEndZGR22NUjJRTLs9VqqzWiHNBo2m26KkRGS-5J4Jl1WNyAeJ-RtCJlWADhBediwlH4K1KRY8RY7Nl9VOrga_ffEN3PpQsoyFwAHQasrETUhsNOMvsKIpEMxFjQ1utB_IC9wHW0SAeXWn0Tyvgg76BNx7lyk0R1uNLEuk0Z" />
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Announcements Section -->
+        <section class="py-24 bg-surface-container-low">
+            <div class="container mx-auto px-8">
+                <div class="flex justify-between items-end mb-12">
+                    <div>
+                        <h2 class="font-headline text-3xl font-bold text-primary -tracking-[0.02em] mb-2">Fakülte
+                            Duyuruları</h2>
+                        <p class="text-on-surface-variant">Akademik takvim ve kariyer etkinliklerinden haberdar olun.
+                        </p>
+                    </div>
+                    <a class="text-primary font-semibold flex items-center gap-2 group" href="#">
+                        Tüm Duyurular
+                        <span
+                            class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
+                    </a>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Announcement Card 1 -->
+                    <div
+                        class="bg-surface-container-lowest p-8 rounded-lg hover:bg-surface-container-high transition-all duration-200 cursor-pointer flex flex-col h-full">
+                        <span class="text-label-sm text-tertiary font-bold mb-4">ETKİNLİK • 12 MAYIS</span>
+                        <h3 class="font-headline text-xl font-bold text-on-surface mb-4 leading-snug">Medya ve İletişim
+                            Zirvesi '24 Kayıtları Başladı</h3>
+                        <p class="text-on-surface-variant text-sm mb-8 flex-grow">Sektörün önde gelen isimleri bu yıl
+                            İNİF kampüsünde bir araya geliyor. Kariyer fırsatlarını kaçırmayın.</p>
+                        <span class="material-symbols-outlined text-primary self-end">arrow_outward</span>
+                    </div>
+                    <!-- Announcement Card 2 -->
+                    <div
+                        class="bg-surface-container-lowest p-8 rounded-lg hover:bg-surface-container-high transition-all duration-200 cursor-pointer flex flex-col h-full">
+                        <span class="text-label-sm text-secondary font-bold mb-4">AKADEMİK • 05 MAYIS</span>
+                        <h3 class="font-headline text-xl font-bold text-on-surface mb-4 leading-snug">Erasmus+ Staj
+                            Hareketliliği Başvuruları</h3>
+                        <p class="text-on-surface-variant text-sm mb-8 flex-grow">Avrupa'da kariyerinize yön vermek için
+                            staj başvurularınızı Kariyer Portalı üzerinden gerçekleştirebilirsiniz.</p>
+                        <span class="material-symbols-outlined text-primary self-end">arrow_outward</span>
+                    </div>
+                    <!-- Announcement Card 3 -->
+                    <div
+                        class="bg-surface-container-lowest p-8 rounded-lg hover:bg-surface-container-high transition-all duration-200 cursor-pointer flex flex-col h-full">
+                        <span class="text-label-sm text-primary font-bold mb-4">KARİYER • 28 NİSAN</span>
+                        <h3 class="font-headline text-xl font-bold text-on-surface mb-4 leading-snug">Mezunlar Paneli:
+                            Dijital Dönüşümde İletişim</h3>
+                        <p class="text-on-surface-variant text-sm mb-8 flex-grow">Mezunlarımızın deneyimlerini
+                            paylaşacağı online webinar serisinin yeni bölümü haftaya başlıyor.</p>
+                        <span class="material-symbols-outlined text-primary self-end">arrow_outward</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Career Highlights -->
+        <section class="py-24 bg-surface">
+            <div class="container mx-auto px-8">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
+                    <div class="lg:col-span-4 sticky top-24">
+                        <h2 class="font-headline text-4xl font-bold text-primary -tracking-[0.02em] mb-6">Öne Çıkan
+                            Fırsatlar</h2>
+                        <p class="text-on-surface-variant mb-10 leading-relaxed">
+                            Fakültemize özel olarak açılan kontenjanlar ve partner kurumlarımızın sunduğu staj/iş
+                            imkanlarını keşfedin.
+                        </p>
+                        <div class="space-y-6">
+                            <div class="flex items-start gap-4">
+                                <div
+                                    class="w-12 h-12 rounded bg-tertiary-fixed flex items-center justify-center shrink-0">
+                                    <span class="material-symbols-outlined text-on-tertiary-fixed">verified</span>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-on-surface">Fakülte Onaylı</h4>
+                                    <p class="text-sm text-on-surface-variant">Tüm ilanlar akademik birimlerimizce
+                                        incelenir.</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-4">
+                                <div
+                                    class="w-12 h-12 rounded bg-secondary-fixed flex items-center justify-center shrink-0">
+                                    <span class="material-symbols-outlined text-on-secondary-fixed">diversity_3</span>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-on-surface">Mezun Networkü</h4>
+                                    <p class="text-sm text-on-surface-variant">İlan verenlerin %60'ı fakültemiz
+                                        mezunudur.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="lg:col-span-8 space-y-4">
+                        <!-- Job Item 1 -->
+                        <div
+                            class="bg-surface-container-lowest p-6 rounded-lg flex items-center justify-between border-l-4 border-tertiary hover:bg-surface-container-high transition-all">
+                            <div class="flex items-center gap-6">
+                                <div
+                                    class="w-14 h-14 bg-surface-container-low rounded flex items-center justify-center text-primary font-bold text-xl">
+                                    TRT</div>
+                                <div>
+                                    <h4 class="font-bold text-lg text-on-surface">Görsel Yönetmen Yardımcısı</h4>
+                                    <p class="text-on-surface-variant text-sm italic">TRT Haber Merkezi • İstanbul</p>
+                                </div>
+                            </div>
+                            <div class="text-right">
+                                <span
+                                    class="inline-block px-3 py-1 bg-tertiary-fixed text-on-tertiary-fixed text-[10px] font-bold rounded uppercase mb-2">Tam
+                                    Zamanlı</span>
+                                <p class="text-xs text-on-surface-variant">2 gün önce yayınlandı</p>
+                            </div>
+                        </div>
+                        <!-- Job Item 2 -->
+                        <div
+                            class="bg-surface-container-lowest p-6 rounded-lg flex items-center justify-between border-l-4 border-tertiary hover:bg-surface-container-high transition-all">
+                            <div class="flex items-center gap-6">
+                                <div
+                                    class="w-14 h-14 bg-surface-container-low rounded flex items-center justify-center text-primary font-bold text-xl">
+                                    DDB</div>
+                                <div>
+                                    <h4 class="font-bold text-lg text-on-surface">Junior Reklam Yazarı</h4>
+                                    <p class="text-on-surface-variant text-sm italic">Medina Turgul DDB • Maslak</p>
+                                </div>
+                            </div>
+                            <div class="text-right">
+                                <span
+                                    class="inline-block px-3 py-1 bg-tertiary-fixed text-on-tertiary-fixed text-[10px] font-bold rounded uppercase mb-2">Staj</span>
+                                <p class="text-xs text-on-surface-variant">5 gün önce yayınlandı</p>
+                            </div>
+                        </div>
+                        <!-- Job Item 3 -->
+                        <div
+                            class="bg-surface-container-lowest p-6 rounded-lg flex items-center justify-between border-l-4 border-tertiary hover:bg-surface-container-high transition-all">
+                            <div class="flex items-center gap-6">
+                                <div
+                                    class="w-14 h-14 bg-surface-container-low rounded flex items-center justify-center text-primary font-bold text-xl">
+                                    AN</div>
+                                <div>
+                                    <h4 class="font-bold text-lg text-on-surface">Sosyal Medya Analisti</h4>
+                                    <p class="text-on-surface-variant text-sm italic">Anadolu Ajansı • Ankara</p>
+                                </div>
+                            </div>
+                            <div class="text-right">
+                                <span
+                                    class="inline-block px-3 py-1 bg-tertiary-fixed text-on-tertiary-fixed text-[10px] font-bold rounded uppercase mb-2">Yarı
+                                    Zamanlı</span>
+                                <p class="text-xs text-on-surface-variant">1 hafta önce yayınlandı</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Public Stats Dashboard (Deep Blue Theme) -->
+        <section class="py-24 academic-gradient text-white overflow-hidden relative">
+            <div class="container mx-auto px-8 relative z-10">
+                <div class="max-w-3xl mb-16">
+                    <h2 class="font-headline text-4xl font-bold mb-6">Mezuniyet Sonrası Başarı Tablosu</h2>
+                    <p class="text-on-primary-container text-lg opacity-90">İnönü İletişim mezunlarının profesyonel
+                        dünyadaki ayak izlerini takip edin. Rakamlarla büyümemiz ve etkimiz.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+                    <div class="relative group">
+                        <div class="text-[4rem] font-bold leading-none mb-4 tracking-tighter text-secondary-container">
+                            %84</div>
+                        <div class="text-white/60 font-medium mb-2">İstihdam Oranı</div>
+                        <div
+                            class="h-1 w-12 bg-secondary-container rounded-full transition-all group-hover:w-full duration-500">
+                        </div>
+                        <p class="text-sm mt-4 text-white/40 italic">Mezuniyetin ilk 6 ayı içerisinde.</p>
+                    </div>
+                    <div class="relative group">
+                        <div class="text-[4rem] font-bold leading-none mb-4 tracking-tighter text-secondary-container">
+                            12</div>
+                        <div class="text-white/60 font-medium mb-2">Ülkede Kariyer</div>
+                        <div
+                            class="h-1 w-12 bg-secondary-container rounded-full transition-all group-hover:w-full duration-500">
+                        </div>
+                        <p class="text-sm mt-4 text-white/40 italic">Uluslararası ağımız genişliyor.</p>
+                    </div>
+                    <div class="relative group">
+                        <div class="text-[4rem] font-bold leading-none mb-4 tracking-tighter text-secondary-container">
+                            450+</div>
+                        <div class="text-white/60 font-medium mb-2">Aktif Stajyer</div>
+                        <div
+                            class="h-1 w-12 bg-secondary-container rounded-full transition-all group-hover:w-full duration-500">
+                        </div>
+                        <p class="text-sm mt-4 text-white/40 italic">Şu an sektörde öğrenenler.</p>
+                    </div>
+                    <div class="relative group">
+                        <div class="text-[4rem] font-bold leading-none mb-4 tracking-tighter text-secondary-container">
+                            1000</div>
+                        <div class="text-white/60 font-medium mb-2">Üst Düzey Yönetici</div>
+                        <div
+                            class="h-1 w-12 bg-secondary-container rounded-full transition-all group-hover:w-full duration-500">
+                        </div>
+                        <p class="text-sm mt-4 text-white/40 italic">Mezunlarımızın liderlik konumu.</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Decorative circle -->
+            <div class="absolute -right-24 -bottom-24 w-96 h-96 bg-primary-container/20 rounded-full blur-3xl"></div>
+        </section>
+    </main>
+    <!-- Footer -->
+    <footer class="bg-[#f8f9fa] dark:bg-slate-950 border-t border-[#c2c7d1]/15 py-24 px-8">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-12 w-full max-w-7xl mx-auto">
+            <div class="col-span-1 md:col-span-1">
+                <div class="font-bold text-[#0F4C81] text-xl mb-6">İNİF Kariyer</div>
+                <p class="font-['Inter'] text-xs text-slate-500 leading-relaxed max-w-xs">
+                    İnönü Üniversitesi İletişim Fakültesi öğrencileri ve mezunları arasındaki bağı güçlendiren
+                    profesyonel gelişim platformu.
+                </p>
+                <div class="flex gap-4 mt-8">
+                    <a class="w-8 h-8 rounded-full bg-surface-container-high flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all"
+                        href="#"><span class="material-symbols-outlined text-[18px]">share</span></a>
+                    <a class="w-8 h-8 rounded-full bg-surface-container-high flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all"
+                        href="#"><span class="material-symbols-outlined text-[18px]">public</span></a>
+                    <a class="w-8 h-8 rounded-full bg-surface-container-high flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all"
+                        href="#"><span class="material-symbols-outlined text-[18px]">mail</span></a>
+                </div>
+            </div>
+            <div class="space-y-4">
+                <h5 class="font-headline font-bold text-primary text-sm uppercase tracking-wider">Hızlı Erişim</h5>
+                <ul class="space-y-3 font-['Inter'] text-xs text-slate-500">
+                    <li><a class="hover:text-[#0F4C81] transition-colors" href="#">Bölümlerimiz</a></li>
+                    <li><a class="hover:text-[#0F4C81] transition-colors" href="#">Duyurular</a></li>
+                    <li><a class="hover:text-[#0F4C81] transition-colors" href="#">Etkinlik Takvimi</a></li>
+                    <li><a class="hover:text-[#0F4C81] transition-colors" href="#">Sıkça Sorulanlar</a></li>
+                </ul>
+            </div>
+            <div class="space-y-4">
+                <h5 class="font-headline font-bold text-primary text-sm uppercase tracking-wider">Kurumsal</h5>
+                <ul class="space-y-3 font-['Inter'] text-xs text-slate-500">
+                    <li><a class="hover:text-[#0F4C81] transition-colors" href="#">KVKK Aydınlatma</a></li>
+                    <li><a class="hover:text-[#0F4C81] transition-colors" href="#">Kullanım Koşulları</a></li>
+                    <li><a class="hover:text-[#0F4C81] transition-colors" href="#">İletişim</a></li>
+                    <li><a class="hover:text-[#0F4C81] transition-colors" href="#">Fakülte Sitesi</a></li>
+                </ul>
+            </div>
+            <div class="space-y-4">
+                <h5 class="font-headline font-bold text-primary text-sm uppercase tracking-wider">Kampüs</h5>
+                <p class="font-['Inter'] text-xs text-slate-500 leading-relaxed">
+                    İnönü Üniversitesi Kampüsü<br />
+                    İletişim Fakültesi Dekanlığı<br />
+                    44280 Battalgazi/Malatya
+                </p>
+                <div class="mt-4 p-4 bg-surface-container rounded-lg border border-outline-variant/15">
+                    <p class="text-[10px] text-on-surface-variant leading-snug">Kariyer merkezimiz hafta içi 08:30 -
+                        17:30 saatleri arasında açıktır.</p>
+                </div>
+            </div>
+        </div>
+        <div
+            class="max-w-7xl mx-auto mt-20 pt-8 border-t border-[#c2c7d1]/15 flex flex-col md:flex-row justify-between items-center gap-4">
+            <p class="font-['Inter'] text-xs text-slate-500">© 2024 İNİF Kariyer - Tüm Hakları Saklıdır.</p>
+            <div class="flex gap-6">
+                <a class="text-[10px] font-bold text-slate-400 hover:text-primary transition-colors uppercase tracking-widest"
+                    href="#">Gizlilik Politikası</a>
+                <a class="text-[10px] font-bold text-slate-400 hover:text-primary transition-colors uppercase tracking-widest"
+                    href="#">Çerez Tercihleri</a>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
